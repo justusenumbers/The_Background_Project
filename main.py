@@ -1,4 +1,5 @@
 import requests #requestsb library for HTTP requests
+import json
 
 payload = {
 "key" : "API_KEY_GOES_HERE", #API Key goes here
@@ -12,3 +13,10 @@ payload = {
 
 url = "https://pixabay.com/api/"
 response = requests.get(url,params = payload)
+
+outfile = open "/home/justusenumbers/Projects/The_Background_Project/AfterRequest.txt", "w")
+
+
+response.json()
+jsonToPython = json.loads(response)
+print(jsonToPython)
